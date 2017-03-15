@@ -1,19 +1,38 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="assets/images/favicon-32x32.png">
+      </ion-avatar>
+      <h2>Welcome {{_user.details.name}} </h2>
+      <p>{{app.name}} v.{{app.versionNumber}}</p>
+      <p>{{app.versionCode}}</p>
+      <p>{{app.packageName}}</p>
+    </ion-item>
   </ion-header>
 
-  <ion-content>
+  <ion-content class="app-component">
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+      <ion-item menuClose (click)="openPage(requestListComponent)">
+        Delivered requests
+        <ion-badge *ngIf="numberOfDeliveredRequests > 0" item-right item>{{numberOfDeliveredRequests}}</ion-badge>
+      </ion-item>
+      <ion-item menuClose (click)="openPage(reportingComponent)">
+        Reporting
+      </ion-item>
+      <ion-item menuClose (click)="openPage(settingsComponent)">
+        Settings
+      </ion-item>
     </ion-list>
+    <div style="position: absolute; bottom: 40px; width: 100%">
+      <div style="text-align: center">
+        <a menuClose (click)="logout()">Logout</a>
+      </div>
+    </div>
   </ion-content>
 
 </ion-menu>
+
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
