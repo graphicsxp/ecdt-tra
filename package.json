@@ -32,12 +32,22 @@
     "typescript": "2.0.9"
   },
   "cordovaPlugins": [
-    "cordova-plugin-whitelist",
-    "cordova-plugin-console",
-    "cordova-plugin-statusbar",
     "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-splashscreen"
+    "cordova-plugin-file",
+    "cordova-plugin-file-opener2",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-badge",
+    "cordova-plugin-vibration",
+    "cordova-plugin-insomnia",
+    "cordova-plugin-nativestorage",
+    "cordova-plugin-app-version",
+    "cordova-plugin-network-information",
+    "cordova-plugin-calendar"
   ],
   "cordovaPlatforms": [],
   "description": "ecdt-tra: An Ionic project"
